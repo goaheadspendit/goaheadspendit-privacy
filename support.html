@@ -9,9 +9,16 @@
     :root { color-scheme: light dark; }
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.45;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+      background: #ffffff;
+      color: #1d1d1f;
     }
+    @media (prefers-color-scheme: dark) {
+      body { background: #000000; color: #f5f5f7; }
+    }
+
     .wrap {
       max-width: 760px;
       margin: 0 auto;
@@ -20,6 +27,7 @@
     h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.02em; }
     .tagline { font-size: 18px; margin: 0 0 20px; opacity: 0.85; }
     .sub { font-size: 15px; margin: 0 0 28px; opacity: 0.75; max-width: 60ch; }
+
     .card {
       border: 1px solid rgba(127,127,127,0.25);
       border-radius: 14px;
@@ -27,7 +35,10 @@
       margin: 14px 0;
     }
     .label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 8px; }
-    a { color: inherit; }
+
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     .links a { margin-right: 14px; }
 
     /* 1-line subtlety for language switch */
@@ -45,8 +56,14 @@
     <section class="card">
       <div class="label">Support</div>
       <div>
-        Email: <a href="mailto:goaheadspendit.app@gmail.com?subject=GoAheadSpendIt%20Support">goaheadspendit.app@gmail.com</a>
+        Email:
+        <a href="mailto:support@goaheadspendit.com?subject=GoAheadSpendIt%20Support&body=Please%20include%3A%0A-%20App%20version%0A-%20iOS%20version%0A-%20Device%20model%0A%0ADescription%3A%0A">
+          support@goaheadspendit.com
+        </a>
       </div>
+      <p style="margin:10px 0 0; font-size:14px; opacity:0.75;">
+        Please include your app version, iOS version, and device model.
+      </p>
     </section>
 
     <section class="card">
