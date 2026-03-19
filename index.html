@@ -4,9 +4,17 @@
 <meta charset="UTF-8">
 <title>Privacy Policy – GoAheadSpendIt</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+<style>
 :root {
   color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #1d1d1f;
+  --link: #0066cc;
+  --rule: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -14,24 +22,27 @@ body {
                Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.55;
   margin: 0;
-  padding: 40px 20px;
+  padding: 40px 20px 56px;
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   font-size: 16px;
-  background: #ffffff;
-  color: #1d1d1f;
+  background: var(--bg);
+  color: var(--text);
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #000000;
-    color: #f5f5f7;
+  :root {
+    --bg: #000000;
+    --text: #f5f5f7;
+    --link: #4da3ff;
+    --rule: rgba(255, 255, 255, 0.2);
   }
 }
 
 h1 {
   font-size: 28px;
+  line-height: 1.15;
   margin-top: 0;
   margin-bottom: 0.6em;
   letter-spacing: -0.01em;
@@ -39,6 +50,7 @@ h1 {
 
 h2 {
   font-size: 18px;
+  line-height: 1.3;
   margin-top: 1.8em;
   margin-bottom: 0.4em;
   letter-spacing: -0.005em;
@@ -49,49 +61,51 @@ p {
 }
 
 a {
-  color: #0066cc;
+  color: var(--link);
   text-decoration: none;
+  text-underline-offset: 0.14em;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   text-decoration: underline;
 }
 
-small, .lang-switch {
+small,
+.lang-switch {
   font-size: 0.9em;
-  opacity: 0.65;
+  opacity: 0.68;
+}
+
+.lang-switch {
+  margin-top: -0.2em;
+  margin-bottom: 1.2em;
 }
 
 hr {
   border: none;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid var(--rule);
   margin: 2em 0;
-}
-
-@media (prefers-color-scheme: dark) {
-  hr {
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
 }
 </style>
 </head>
 <body>
 
 <h1>Privacy Policy for GoAheadSpendIt</h1>
-<p class="lang-switch"><a href="privacy_de.html">Deutsch</a></p>
+<p class="lang-switch"><a href="privacy_de.html" lang="de">Deutsch</a></p>
 
 <p><strong>Effective Date:</strong> February 21, 2026</p>
 
-<p>GoAheadSpendIt is a personal budgeting tool designed to help you track spending patterns. It does not provide financial or investment advice.</p>
+<p>GoAheadSpendIt is a personal budgeting app designed to help you plan and track spending. It does not provide financial or investment advice.</p>
 
 <h2>Data Collection</h2>
-<p>GoAheadSpendIt does not collect, track, transmit, or store personal data outside your device. All budget and usage information remains stored locally on your device.</p>
+<p>GoAheadSpendIt does not collect, track, transmit, or store personal data outside your device. Your budget and usage information remains stored locally on your device.</p>
 
 <h2>Accounts and Tracking</h2>
 <p>The app does not require an account and does not use analytics, advertising, or third-party tracking technologies.</p>
 
 <h2>Your Control</h2>
-<p>You have full control over your data. You may delete the app at any time to remove all locally stored information.</p>
+<p>You remain in control of your data. You may delete the app at any time to remove all locally stored information.</p>
 
 <h2>Contact</h2>
 <p>If you have questions about privacy or GoAheadSpendIt, you can contact:<br>
