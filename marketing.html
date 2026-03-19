@@ -4,169 +4,235 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GoAheadSpendIt</title>
-
+<meta name="description" content="A calm, visual weekly wallet for planning and tracking spending.">
 <link rel="icon" href="app-icon.png">
 
 <style>
-
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;
-background:#f5f5f7;
-color:#1d1d1f;
+:root {
+  color-scheme: light dark;
+  --bg: #f5f5f7;
+  --surface: #ffffff;
+  --text: #1d1d1f;
+  --subtext: #6e6e73;
+  --rule: #e5e5e7;
+  --link: #0071e3;
+  --shadow-1: 0 20px 50px rgba(0, 0, 0, 0.12);
+  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --hero-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 32px;
-background:white;
-border-bottom:1px solid #e5e5e7;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --surface: #111113;
+    --text: #f5f5f7;
+    --subtext: #a1a1a6;
+    --rule: rgba(255, 255, 255, 0.12);
+    --link: #4da3ff;
+    --shadow-1: 0 20px 50px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.25);
+    --hero-shadow:
+      0 30px 70px rgba(0, 0, 0, 0.45),
+      0 10px 24px rgba(0, 0, 0, 0.25);
+  }
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-font-weight:600;
-font-size:20px;
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
-.app-icon{
-width:36px;
-height:36px;
-border-radius:9px;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+               Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
 
-.lang{
-font-size:14px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
 }
 
-.lang a{
-text-decoration:none;
-color:#0071e3;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
 }
 
-.hero{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-padding:80px 20px 40px 20px;
+.app-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  box-shadow: var(--shadow-2);
 }
 
-.hero h1{
-font-size:48px;
-font-weight:700;
-margin-bottom:20px;
+.lang {
+  font-size: 14px;
 }
 
-.hero p{
-font-size:21px;
-color:#6e6e73;
-max-width:620px;
-line-height:1.5;
-margin-top:4px;
+.lang a,
+footer a {
+  color: var(--link);
+  text-decoration: none;
+  text-underline-offset: 0.14em;
 }
 
-.hero img{
-margin-top:50px;
-width:min(360px,90vw);
-border-radius:36px;
-box-shadow:
-0 40px 80px rgba(0,0,0,0.25),
-0 10px 30px rgba(0,0,0,0.15);
+.lang a:hover,
+.lang a:focus-visible,
+footer a:hover,
+footer a:focus-visible {
+  text-decoration: underline;
 }
 
-.section{
-max-width:800px;
-margin:auto;
-padding:60px 20px;
-text-align:center;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 88px 20px 48px;
 }
 
-.section h2{
-font-size:32px;
-margin-bottom:20px;
+.hero h1 {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
 }
 
-.section p{
-font-size:18px;
-color:#6e6e73;
-line-height:1.6;
+.hero p {
+  font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+  color: var(--subtext);
+  max-width: 640px;
+  line-height: 1.5;
+  margin: 0;
 }
 
-footer{
-text-align:center;
-font-size:14px;
-color:#86868b;
-padding:40px;
+.hero img {
+  margin-top: 50px;
+  width: min(360px, 90vw);
+  border-radius: 36px;
+  box-shadow: var(--hero-shadow);
 }
 
-footer a{
-color:#0071e3;
-text-decoration:none;
-margin:0 10px;
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 20px;
+  text-align: center;
 }
 
+.section h2 {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+
+.section p {
+  font-size: 18px;
+  color: var(--subtext);
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: var(--subtext);
+  padding: 40px 20px 56px;
+  border-top: 1px solid var(--rule);
+}
+
+footer a {
+  margin: 0 10px;
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  .brand {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .app-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .hero {
+    padding-top: 72px;
+  }
+
+  footer a {
+    display: inline-block;
+    margin: 6px 10px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="brand">
-<img src="app-icon.png" class="app-icon">
-GoAheadSpendIt
-</div>
+  <div class="brand">
+    <img src="app-icon.png" class="app-icon" alt="GoAheadSpendIt app icon">
+    GoAheadSpendIt
+  </div>
 
-<div class="lang">
-<a href="marketing_de.html">Deutsch</a>
-</div>
+  <div class="lang">
+    <a href="marketing_de.html" lang="de">Deutsch</a>
+  </div>
 </header>
 
 <section class="hero">
+  <h1>See your week at a glance.</h1>
 
-<h1>See your week at a glance.</h1>
+  <p>
+    A calm, visual wallet for planning and tracking weekly spending.
+  </p>
 
-<p>
-A calm, visual way to track your weekly spending.
-</p>
-
-<img src="hero-en.png" alt="GoAheadSpendIt wallet screen">
-
+  <img src="hero-en.png" alt="GoAheadSpendIt showing the weekly wallet screen">
 </section>
 
 <section class="section">
+  <h2>A weekly wallet, made simple</h2>
 
-<h2>See your week differently</h2>
-
-<p>
-Instead of complicated budgeting systems, GoAheadSpendIt shows a simple wallet with how much money remains for the week.  
-Drop tokens onto categories to record spending and instantly see where your money goes.
-</p>
-
+  <p>
+    GoAheadSpendIt shows how much money remains for the week in one clear view.
+    Record spending with tokens, organize it by category, and understand where your
+    money is going without the clutter of a traditional budget spreadsheet.
+  </p>
 </section>
 
 <section class="section">
+  <h2>Private by design</h2>
 
-<h2>Private by design</h2>
-
-<p>
-GoAheadSpendIt works entirely on your device.  
-No account required. No personal data collected.
-</p>
-
+  <p>
+    GoAheadSpendIt works entirely on your device. No account. No analytics.
+    No ads. No third-party tracking.
+  </p>
 </section>
 
 <footer>
-
-<a href="privacy.html">Privacy Policy</a>
-<a href="support.html">Support</a>
-<a href="marketing_de.html">Deutsch</a>
-
+  <a href="index.html">Privacy Policy</a>
+  <a href="support.html">Support</a>
+  <a href="marketing_de.html" lang="de">Deutsch</a>
 </footer>
 
 </body>
