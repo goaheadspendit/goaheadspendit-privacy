@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoAheadSpendIt Press Kit</title>
+  <meta name="description" content="Press kit for GoAheadSpendIt, a calm weekly budget planner for iPhone and iPad with no ads, no subscription, no bank sync, no account, and no data collection." />
+  <style>
+    :root {
+      --ink: #20312d;
+      --muted: #65716d;
+      --soft: #f7f1e8;
+      --card: #fffaf3;
+      --line: #e7dccd;
+      --accent: #8d5f35;
+      --accent-strong: #674222;
+      --blue: #2f6073;
+      --shadow: 0 20px 60px rgba(58, 45, 31, 0.12);
+      --radius: 28px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(143, 101, 58, 0.18), transparent 34rem),
+        linear-gradient(180deg, #fff8ef 0%, #fbf4eb 45%, #f4eadf 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 18px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(145deg, #4c7b86, #d9b071);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35), 0 8px 20px rgba(70,54,32,0.18);
+    }
+
+    .hero {
+      padding: 72px 0 46px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.58);
+      color: var(--accent-strong);
+      font-size: 0.92rem;
+      font-weight: 650;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      max-width: 780px;
+      font-size: clamp(3rem, 7vw, 6.7rem);
+      letter-spacing: -0.07em;
+      line-height: 0.9;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-strong);
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .button.primary {
+      background: var(--accent-strong);
+      color: white;
+      box-shadow: 0 12px 28px rgba(103,66,34,0.23);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.55);
+      color: var(--accent-strong);
+    }
+
+    .hero-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,250,243,0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .phone-frame {
+      min-height: 480px;
+      border-radius: 36px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.25)),
+        linear-gradient(160deg, #f6e6d0, #d2e2df 54%, #f7efe3);
+      border: 1px solid rgba(103,66,34,0.14);
+      padding: 24px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .phone-frame strong {
+      display: block;
+      font-size: 2.1rem;
+      line-height: 1;
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
+    }
+
+    .phone-frame span {
+      display: block;
+      color: var(--muted);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-title {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .section-lead {
+      max-width: 780px;
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 1.13rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,250,243,0.72);
+      box-shadow: 0 12px 36px rgba(58,45,31,0.07);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.42);
+    }
+
+    .fact span:first-child { color: var(--muted); }
+    .fact span:last-child { font-weight: 700; text-align: right; }
+
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .shot {
+      min-height: 300px;
+      border: 1px dashed #cdbda9;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.35);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .asset-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .asset-list li {
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.42);
+    }
+
+    .quote {
+      padding: 32px;
+      border-radius: var(--radius);
+      background: var(--blue);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .quote p {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.4rem);
+      line-height: 1.12;
+      letter-spacing: -0.045em;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 16px;
+      opacity: 0.8;
+    }
+
+    footer {
+      padding: 44px 0 64px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer .legal {
+      margin-top: 18px;
+      max-width: 760px;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid, .grid-2, .facts { grid-template-columns: 1fr; }
+      .grid-3, .screenshots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero { padding-top: 44px; }
+      .phone-frame { min-height: 360px; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { align-items: flex-start; flex-direction: column; }
+      .grid-3, .screenshots { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      .button { width: 100%; }
+      .fact { flex-direction: column; gap: 4px; }
+      .fact span:last-child { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand"><div class="mark" aria-hidden="true"></div><span>GoAheadSpendIt</span></div>
+      <div>Press Kit · Finance · iPhone and iPad</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">No ads · No subscription · No bank sync · No account</div>
+          <h1>A calmer way to decide before you spend.</h1>
+          <p class="lead">GoAheadSpendIt is a simple weekly budget planner for people who want clearer spending choices without connecting bank accounts, creating an account, or paying another subscription.</p>
+          <div class="actions">
+            <a class="button primary" href="https://apps.apple.com/us/app/goaheadspendit/id6759508801">View on the App Store</a>
+            <a class="button secondary" href="#assets">Download press assets</a>
+            <a class="button secondary" href="mailto:support@goaheadspendit.com?subject=GoAheadSpendIt%20press%20inquiry">Contact developer</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="GoAheadSpendIt app preview placeholder">
+          <div class="phone-frame">
+            <div>
+              <strong>Wallet → Tokens → Tiles</strong>
+              <span>Replace this placeholder with a clean framed screenshot from the current App Store set.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview">
+      <div class="wrap grid-2">
+        <div>
+          <h2 class="section-title">What it is</h2>
+          <p class="section-lead">GoAheadSpendIt is a simple weekly budget planner for iPhone and iPad. Users set a fixed 7-day Wallet, drag money Tokens onto category Tiles as they spend, review History, and see what remains before making the next choice.</p>
+        </div>
+        <div>
+          <h2 class="section-title">Why it exists</h2>
+          <p class="section-lead">Many budgeting apps focus on automation, bank sync, reports, and subscriptions. GoAheadSpendIt takes a quieter approach: a pay-once, private, visual weekly spending space built around clear choices instead of financial clutter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="differentiators">
+      <div class="wrap">
+        <h2 class="section-title">Editorial angles</h2>
+        <p class="section-lead">These are the cleanest story frames for writers, reviewers, and personal-finance editors.</p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>No-subscription budgeting</h3>
+            <p>A $2.99 pay-once alternative for people who do not want another monthly app charge.</p>
+          </article>
+          <article class="card">
+            <h3>Budgeting without bank sync</h3>
+            <p>For users who prefer to plan and record spending manually instead of connecting financial accounts.</p>
+          </article>
+          <article class="card">
+            <h3>Calm weekly spending decisions</h3>
+            <p>Built around a 7-day Wallet, visual Tokens, and category Tiles so users can see what their money still needs to cover.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="facts">
+      <div class="wrap">
+        <h2 class="section-title">Product facts</h2>
+        <div class="facts">
+          <div class="fact"><span>App name</span><span>GoAheadSpendIt</span></div>
+          <div class="fact"><span>Category</span><span>Finance</span></div>
+          <div class="fact"><span>Platform</span><span>iPhone and iPad</span></div>
+          <div class="fact"><span>Price</span><span>$2.99 one-time purchase</span></div>
+          <div class="fact"><span>Ads</span><span>No</span></div>
+          <div class="fact"><span>Subscription</span><span>No</span></div>
+          <div class="fact"><span>Bank sync</span><span>No</span></div>
+          <div class="fact"><span>Account required</span><span>No</span></div>
+          <div class="fact"><span>App privacy</span><span>Data Not Collected</span></div>
+          <div class="fact"><span>Languages</span><span>English and German</span></div>
+          <div class="fact"><span>Developer</span><span>William Albert Hass</span></div>
+          <div class="fact"><span>Best fit</span><span>Weekly budgeting and spending decisions</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots">
+      <div class="wrap">
+        <h2 class="section-title">Screenshots</h2>
+        <p class="section-lead">Use current App Store screenshots or fresh screenshots captured from the live app. Keep editorial captions outside the app UI and avoid altering the visible app experience.</p>
+        <div class="screenshots">
+          <div class="shot">iPhone screenshot 1<br />Wallet / Tokens / Tiles</div>
+          <div class="shot">iPhone screenshot 2<br />Decide before you spend</div>
+          <div class="shot">iPad screenshot 1<br />Weekly budget planner</div>
+          <div class="shot">iPad screenshot 2<br />History / review flow</div>
+        </div>
+        <p class="note">Replace each placeholder with optimized PNG or JPEG files from the locked screenshot set.</p>
+      </div>
+    </section>
+
+    <section id="assets">
+      <div class="wrap grid-2">
+        <div>
+          <h2 class="section-title">Press assets</h2>
+          <p class="section-lead">Prepare a downloadable ZIP for editors so they can cover the app without asking for basic materials.</p>
+          <ul class="asset-list">
+            <li>GoAheadSpendIt app icon, 1024×1024 PNG</li>
+            <li>Current iPhone screenshots</li>
+            <li>Current iPad screenshots</li>
+            <li>Short and long descriptions</li>
+            <li>Product facts sheet</li>
+            <li>App Store, support, and privacy links</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" href="/assets/GoAheadSpendIt-Press-Kit.zip">Download press kit ZIP</a>
+          </div>
+        </div>
+        <div class="quote">
+          <p>“GoAheadSpendIt helps you slow down, see what your money still needs to cover, and make spending choices you can feel good about.”</p>
+          <small>Product promise</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="copy">
+      <div class="wrap grid-2">
+        <article class="card">
+          <h3>Short description</h3>
+          <p>GoAheadSpendIt is a calm weekly budget planner that helps people decide before they spend, without ads, subscriptions, bank sync, accounts, or collected data.</p>
+        </article>
+        <article class="card">
+          <h3>Long description</h3>
+          <p>GoAheadSpendIt gives users a simple 7-day Wallet, visual money Tokens, and category Tiles so they can see what remains before making the next spending choice. It is designed for people who want a private, pay-once budgeting tool rather than a bank-connected finance dashboard.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Press contact</h2>
+        <p class="section-lead">Reviewers, writers, and editors may contact the developer for screenshots, background, promo codes, or questions about the app.</p>
+        <div class="card">
+          <p><strong>Bill Hass</strong><br />Independent developer of GoAheadSpendIt<br /><a href="mailto:support@goaheadspendit.com">support@goaheadspendit.com</a></p>
+          <div class="actions">
+            <a class="button primary" href="mailto:support@goaheadspendit.com?subject=GoAheadSpendIt%20press%20inquiry">Email press contact</a>
+            <a class="button secondary" href="https://apps.apple.com/us/app/goaheadspendit/id6759508801">View on the App Store</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© 2026 William Albert Hass. GoAheadSpendIt.</div>
+      <div class="legal">Apple, App Store, iPad, and iPhone are trademarks of Apple Inc., registered in the U.S. and other countries and regions. This press kit is for editorial coverage of GoAheadSpendIt and does not imply endorsement by Apple.</div>
+    </div>
+  </footer>
+</body>
+</html>
