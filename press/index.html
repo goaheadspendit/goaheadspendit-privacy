@@ -31,6 +31,7 @@
 
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -92,39 +93,22 @@
       width: 42px;
       height: 42px;
       border-radius: 14px;
+
       background:
-        linear-gradient(145deg,
+        linear-gradient(
+          145deg,
           #4d7d88,
-          #d7b06f);
+          #d7b06f
+        );
+
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.35),
         0 8px 18px rgba(70,54,32,0.18);
     }
 
-    <div class="wrap" style="padding-top: 24px;">
-
-      <div
-        style="
-          display:flex;
-          justify-content:center;
-          margin-bottom: 12px;
-        "
-      >
-    
-        <img
-          src="app-icon.png"
-          alt="GoAheadSpendIt app icon"
-          style="
-            width: 96px;
-            height: 96px;
-            border-radius: 22px;
-            box-shadow: 0 16px 34px rgba(54,40,24,0.18);
-          "
-        />
-    
-      </div>
-    
-    </div>
+    .hero {
+      padding: 50px 0 46px;
+    }
 
     .eyebrow {
       display: inline-flex;
@@ -135,14 +119,14 @@
 
       border-radius: 999px;
 
-      background: rgba(255,255,255,0.62);
+      background:
+        rgba(255,255,255,0.62);
 
       border: 1px solid var(--line);
 
       color: var(--accent);
 
       font-size: 0.92rem;
-
       font-weight: 700;
     }
 
@@ -181,8 +165,7 @@
     .button {
       min-height: 50px;
 
-      padding:
-        0 22px;
+      padding: 0 22px;
 
       border-radius: 999px;
 
@@ -265,15 +248,12 @@
     }
 
     .card h3 {
-      margin:
-        0 0 10px;
-
+      margin: 0 0 10px;
       font-size: 1.24rem;
     }
 
     .card p {
       margin: 0;
-
       color: var(--muted);
     }
 
@@ -295,8 +275,7 @@
 
       gap: 18px;
 
-      padding:
-        14px 16px;
+      padding: 14px 16px;
 
       border-radius: 18px;
 
@@ -315,47 +294,46 @@
       text-align: right;
     }
 
+    .screenshots {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(260px, 320px));
+
+      justify-content: center;
+
+      gap: 28px;
+
+      margin-top: 34px;
+    }
+
     .shot {
       width: 100%;
-    
+
       max-width: 320px;
-    
+
       margin: 0 auto;
-    
+
       border-radius: 30px;
-    
+
       border: 1px solid rgba(103,66,34,0.12);
-    
+
       background:
         rgba(255,255,255,0.45);
-    
+
       box-shadow:
         0 18px 44px rgba(58,45,31,0.12);
-    
+
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
     }
-    
+
     .shot:hover {
       transform: translateY(-4px);
-    
+
       box-shadow:
         0 28px 54px rgba(58,45,31,0.18);
-    }
-
-    .shot {
-      width: 100%;
-
-      border-radius: 30px;
-
-      border: 1px solid rgba(103,66,34,0.12);
-
-      background:
-        rgba(255,255,255,0.45);
-
-      box-shadow:
-        0 18px 44px rgba(58,45,31,0.12);
     }
 
     .quote {
@@ -393,8 +371,7 @@
     }
 
     footer {
-      padding:
-        44px 0 70px;
+      padding: 44px 0 70px;
 
       color: var(--muted);
 
@@ -405,8 +382,7 @@
 
       .grid-2,
       .facts,
-      .grid-3,
-      .screenshots {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
@@ -434,9 +410,35 @@
   </div>
 </header>
 
+<div class="wrap" style="padding-top: 10px;">
+
+  <div
+    style="
+      display:flex;
+      justify-content:center;
+      margin-bottom: 6px;
+    "
+  >
+
+    <img
+      src="../app-icon.png"
+      alt="GoAheadSpendIt app icon"
+      style="
+        width: 92px;
+        height: 92px;
+        border-radius: 22px;
+        box-shadow: 0 16px 34px rgba(54,40,24,0.18);
+      "
+    />
+
+  </div>
+
+</div>
+
 <main>
 
   <section class="hero">
+
     <div class="wrap">
 
       <div class="eyebrow">
@@ -472,6 +474,7 @@
       </div>
 
     </div>
+
   </section>
 
   <section>
@@ -479,7 +482,10 @@
     <div class="wrap grid-2">
 
       <div>
-        <h2 class="section-title">What it is</h2>
+
+        <h2 class="section-title">
+          What it is
+        </h2>
 
         <p class="section-lead">
           GoAheadSpendIt is a calm weekly budget planner
@@ -488,10 +494,14 @@
           and see what their money still needs to cover
           before making the next spending choice.
         </p>
+
       </div>
 
       <div>
-        <h2 class="section-title">Why it exists</h2>
+
+        <h2 class="section-title">
+          Why it exists
+        </h2>
 
         <p class="section-lead">
           Many budgeting apps focus on dashboards,
@@ -501,6 +511,7 @@
           visual spending awareness,
           and private on-device budgeting.
         </p>
+
       </div>
 
     </div>
