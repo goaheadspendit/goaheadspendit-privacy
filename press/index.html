@@ -19,10 +19,10 @@
       --line: rgba(91,68,44,0.12);
       --ink: #1f2422;
       --muted: #6e746f;
-      --accent: #7b5635;
+      --accent: #8a6038;
       --shadow: 0 24px 60px rgba(54,40,24,0.12);
       --radius: 32px;
-      --max: 1180px;
+      --max: 1280px;
     }
 
     * {
@@ -66,7 +66,7 @@
     }
 
     .wrap {
-      width: min(var(--max), calc(100% - 40px));
+      width: min(var(--max), calc(100% - 48px));
       margin: 0 auto;
     }
 
@@ -99,20 +99,62 @@
 
       border-radius: 18px;
 
-      background:
-        linear-gradient(
-          145deg,
-          #4d7d88,
-          #d7b06f
-        );
-
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.35),
         0 8px 18px rgba(70,54,32,0.18);
     }
 
     .hero {
-      padding: 26px 0 34px;
+      padding: 26px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(320px, 460px);
+
+      align-items: center;
+
+      gap: 48px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-device-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-device {
+      width: 100%;
+
+      max-width: 430px;
+
+      border-radius: 38px;
+
+      box-shadow:
+        0 34px 80px rgba(46,34,20,0.18);
+
+      transform:
+        translateY(10px);
+
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+
+    .hero-device:hover {
+      transform:
+        translateY(2px);
+
+      box-shadow:
+        0 42px 96px rgba(46,34,20,0.24);
     }
 
     .eyebrow {
@@ -140,18 +182,18 @@
         20px 0
         18px;
 
-      max-width: 860px;
+      max-width: 760px;
 
       font-size:
-        clamp(2.8rem, 6vw, 5.2rem);
+        clamp(3rem, 6vw, 5.4rem);
 
-      line-height: 0.94;
+      line-height: 0.92;
 
       letter-spacing: -0.08em;
     }
 
     .lead {
-      max-width: 760px;
+      max-width: 700px;
 
       color: var(--muted);
 
@@ -168,9 +210,9 @@
     }
 
     .button {
-      min-height: 50px;
+      min-height: 52px;
 
-      padding: 0 22px;
+      padding: 0 24px;
 
       border-radius: 999px;
 
@@ -207,7 +249,7 @@
     }
 
     section {
-      padding: 40px 0;
+      padding: 48px 0;
     }
 
     .section-title {
@@ -235,7 +277,7 @@
       grid-template-columns:
         repeat(2, minmax(0,1fr));
 
-      gap: 22px;
+      gap: 34px;
     }
 
     .grid-3 {
@@ -391,11 +433,12 @@
       font-size: 0.94rem;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
 
       .grid-2,
       .facts,
-      .grid-3 {
+      .grid-3,
+      .hero-grid {
         grid-template-columns: 1fr;
       }
 
@@ -410,6 +453,12 @@
 
       h1 {
         line-height: 0.98;
+      }
+
+      .hero-device {
+        max-width: 320px;
+
+        margin-top: 12px;
       }
 
     }
@@ -445,37 +494,51 @@
 
   <section class="hero">
 
-    <div class="wrap">
+    <div class="wrap hero-grid">
 
-      <div class="eyebrow">
-        No ads · No subscription · No bank sync · No account
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          No ads · No subscription · No bank sync · No account
+        </div>
+
+        <h1>
+          A calmer way to decide before you spend.
+        </h1>
+
+        <p class="lead">
+          GoAheadSpendIt is a simple weekly budget planner
+          built for people who want clearer spending choices
+          without connecting bank accounts or paying another subscription.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="button primary"
+            href="https://apps.apple.com/us/app/goaheadspendit/id6759508801"
+          >
+            View on the App Store
+          </a>
+
+          <a
+            class="button secondary"
+            href="mailto:support@goaheadspendit.com"
+          >
+            Contact Developer
+          </a>
+
+        </div>
+
       </div>
 
-      <h1>
-        A calmer way to decide before you spend.
-      </h1>
+      <div class="hero-device-wrap">
 
-      <p class="lead">
-        GoAheadSpendIt is a simple weekly budget planner
-        built for people who want clearer spending choices
-        without connecting bank accounts or paying another subscription.
-      </p>
-
-      <div class="actions">
-
-        <a
-          class="button primary"
-          href="https://apps.apple.com/us/app/goaheadspendit/id6759508801"
-        >
-          View on the App Store
-        </a>
-
-        <a
-          class="button secondary"
-          href="mailto:support@goaheadspendit.com"
-        >
-          Contact Developer
-        </a>
+        <img
+          class="hero-device"
+          src="../English_iphone_w_header.001.png"
+          alt="GoAheadSpendIt mindful spending screenshot"
+        />
 
       </div>
 
@@ -649,33 +712,33 @@
           src="../English_iphone_w_header.001.png"
           alt="Mindful spending screenshot"
         />
-      
+
         <img
           class="shot"
           src="../English_iphone_w_header.002.png"
-          alt="Weekly budget planner screenshot"
+          alt="Tokens and Tiles screenshot"
         />
-      
+
         <img
           class="shot"
           src="../English_iphone_w_header.003.png"
-          alt="GoAheadSpendIt categories screenshot"
+          alt="Interactive widgets screenshot"
         />
-      
+
         <img
           class="shot"
           src="../English_iphone_w_header.004.png"
-          alt="GoAheadSpendIt history screenshot"
+          alt="Easy undo screenshot"
         />
-      
+
         <img
           class="shot"
           src="../English_iphone_w_header.005.png"
-          alt="History screenshot"
+          alt="Spend history screenshot"
         />
-      
+
       </div>
-      
+
     </div>
 
   </section>
@@ -699,7 +762,7 @@
 
           <a
             class="button primary"
-            href="../assets/press/GoAheadSpendIt-Press-Kit.zip"
+            href="../assets/GoAheadSpendIt-Press-Kit.zip"
           >
             Download Press Kit
           </a>
