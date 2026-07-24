@@ -5,43 +5,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GASI — Erst entscheiden. Dann ausgeben.</title>
+<title>Will It Budget? — Mit Geld umgehen lernen</title>
 
 <meta
-name="description"
-content="GASI ist ein ruhiges Ausgaben-Tool, das dir hilft, vor dem Ausgeben zu entscheiden – innerhalb eines klaren 7-Tage-Rahmens."
-
+  name="description"
+  content="Will It Budget? vermittelt den Umgang mit Geld durch alltägliche Ausgabenentscheidungen. Mit Geldmarken und Ausgabenkacheln lässt sich der bewusste Umgang mit Taschengeld üben."
 >
 
-<link rel="icon" href="app-icon.png">
+<link rel="icon" href="assets/press/app-icon.png">
 
 <style>
+:root {
+  color-scheme: light dark;
 
-:root{
-  --bg:#f3eee7;
-  --surface:#f8f5f1;
-  --text:#1f2321;
-  --subtext:#6f746f;
-  --rule:#e4ddd4;
-  --link:#9a6b3c;
+  --bg: #f3eee7;
+  --surface: #fbf8f4;
+  --surface-strong: #ffffff;
+  --text: #1f2321;
+  --subtext: #666c67;
+  --rule: #e2d9cf;
+  --accent: #b98538;
+  --accent-dark: #805726;
+  --button-text: #ffffff;
 
   --shadow-soft:
-    0 20px 40px rgba(0,0,0,.06);
+    0 18px 42px rgba(45, 34, 20, 0.08);
 
-  --hero-shadow:
-    0 30px 60px rgba(0,0,0,.10);
+  --shadow-icon:
+    0 20px 44px rgba(45, 34, 20, 0.16);
 }
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html{
-  -webkit-text-size-adjust:100%;
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
+body {
+  margin: 0;
 
   font-family:
     -apple-system,
@@ -52,365 +56,645 @@ body{
     Arial,
     sans-serif;
 
-  background:var(--bg);
-  color:var(--text);
+  line-height: 1.55;
+  background: var(--bg);
+  color: var(--text);
 }
 
-a{
-  text-decoration:none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:24px 32px;
-
-  background:rgba(255,255,255,.32);
-
-  border-bottom:1px solid var(--rule);
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  font-weight:700;
-  font-size:20px;
-
-  letter-spacing:-0.02em;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.app-icon{
-  width:40px;
-  height:40px;
-
-  border-radius:10px;
-
-  box-shadow:var(--shadow-soft);
+header,
+main,
+footer {
+  width: min(1120px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.lang{
-  font-size:15px;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
 }
 
-.lang a,
-footer a{
-  color:var(--link);
-
-  text-decoration:none;
-
-  text-underline-offset:.14em;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.lang a:hover,
-.lang a:focus-visible,
-footer a:hover,
-footer a:focus-visible{
-  text-decoration:underline;
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
 }
 
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
-  text-align:center;
-
-  padding:
-    88px
-    20px
-    56px;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 15px;
+  color: var(--subtext);
 }
 
-.trust-pill{
-  display:inline-block;
-
-  margin:0 0 28px;
-
-  padding:12px 18px;
-
-  border-radius:999px;
-
-  background:rgba(255,255,255,.55);
-
-  border:1px solid var(--rule);
-
-  color:#9a6b3c;
-
-  font-size:15px;
-  font-weight:600;
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+  min-height: 620px;
+  padding: 70px 0 90px;
 }
 
-.hero h1{
-  font-size:clamp(2.7rem,7vw,5rem);
-
-  line-height:.94;
-
-  font-weight:700;
-
-  letter-spacing:-0.06em;
-
-  margin:0 0 24px;
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
-.hero p{
-  font-size:clamp(1.15rem,2.6vw,1.4rem);
-
-  color:var(--subtext);
-
-  max-width:760px;
-
-  line-height:1.65;
-
-  margin:0;
+h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
 }
 
-.mini-badge{
-  margin-top:34px;
-  margin-bottom:-6px;
-
-  font-size:14px;
-  font-weight:600;
-
-  letter-spacing:.01em;
-
-  color:var(--subtext);
+.hero-copy {
+  max-width: 690px;
+  margin: 28px 0 0;
+  font-size: clamp(19px, 2vw, 23px);
+  color: var(--subtext);
 }
 
-.hero img{
-  margin-top:44px;
-
-  width:min(360px,90vw);
-
-  border-radius:32px;
-
-  box-shadow:
-    0 24px 60px rgba(0,0,0,.10);
+.hero-question {
+  display: block;
+  margin-top: 18px;
+  color: var(--text);
+  font-weight: 700;
 }
 
-.section{
-  max-width:860px;
-
-  margin:0 auto;
-
-  padding:
-    76px
-    24px;
-
-  text-align:center;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
 }
 
-.section h2{
-  font-size:clamp(2rem,5vw,2.5rem);
-
-  line-height:1.08;
-
-  letter-spacing:-0.04em;
-
-  margin:0 0 22px;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 14px;
+  font-weight: 700;
 }
 
-.section p{
-  font-size:19px;
-
-  color:var(--subtext);
-
-  line-height:1.8;
-
-  max-width:720px;
-
-  margin:0 auto;
+.button-primary {
+  background: var(--accent-dark);
+  color: var(--button-text);
 }
 
-footer{
-  text-align:center;
-
-  font-size:15px;
-
-  color:var(--subtext);
-
-  padding:
-    48px
-    20px
-    64px;
-
-  border-top:1px solid var(--rule);
+.button-secondary {
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.4);
 }
 
-footer a{
-  margin:0 12px;
-
-  font-weight:600;
+.button:hover,
+.button:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
-@media (max-width:640px){
+.app-icon-wrap {
+  display: flex;
+  justify-content: center;
+}
 
-  header{
-    padding:18px 20px;
+.app-icon {
+  width: min(330px, 72vw);
+  border-radius: 25%;
+  box-shadow: var(--shadow-icon);
+}
+
+.section {
+  padding: 90px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.section-heading p {
+  margin: 18px 0 0;
+  font-size: 19px;
+  color: var(--subtext);
+}
+
+.steps,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: #ead5aa;
+  color: #5a3c18;
+  font-weight: 800;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  margin: 12px 0 0;
+  color: var(--subtext);
+}
+
+.promise {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.promise-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.promise-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.check {
+  color: var(--accent-dark);
+  font-weight: 900;
+}
+
+.callout {
+  padding: 34px;
+  border-radius: 24px;
+  background: var(--surface-strong);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-soft);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+
+.callout p {
+  margin: 0;
+  color: var(--subtext);
+}
+
+.final-cta {
+  text-align: center;
+  padding: 100px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.final-cta h2 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta p {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: var(--subtext);
+  font-size: 19px;
+}
+
+.final-cta .actions {
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 30px 0 46px;
+  border-top: 1px solid var(--rule);
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.legacy {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+@media (max-width: 820px) {
+  header {
+    align-items: flex-start;
   }
 
-  .brand{
-    font-size:18px;
-    gap:10px;
+  nav {
+    gap: 12px 16px;
   }
 
-  .app-icon{
-    width:36px;
-    height:36px;
-
-    border-radius:9px;
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 50px;
   }
 
-  .hero{
-    padding-top:72px;
+  .app-icon-wrap {
+    order: -1;
+    justify-content: flex-start;
   }
 
-  .hero h1{
-    line-height:.98;
+  .app-icon {
+    width: 150px;
   }
 
-  .trust-pill{
-    font-size:14px;
-    line-height:1.5;
+  .steps,
+  .feature-grid,
+  .promise {
+    grid-template-columns: 1fr;
   }
 
-  footer a{
-    display:inline-block;
-    margin:6px 10px;
+  footer {
+    flex-direction: column;
   }
 }
 
+@media (max-width: 560px) {
+  header,
+  main,
+  footer {
+    width: min(100% - 28px, 1120px);
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding-bottom: 70px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .card {
+    padding: 23px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11100f;
+    --surface: #191715;
+    --surface-strong: #1d1a17;
+    --text: #f6f2ed;
+    --subtext: #bbb5ae;
+    --rule: rgba(255, 255, 255, 0.13);
+    --accent: #d7aa5c;
+    --accent-dark: #d7aa5c;
+    --button-text: #17120c;
+  }
+
+  .button-secondary {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-  <div class="brand">
+  <a class="brand" href="#top" aria-label="Startseite von Will It Budget?">
     <img
-      src="app-icon.png"
-      class="app-icon"
-      alt="GASI App-Symbol"
+      src="assets/press/app-icon.png"
+      alt="App-Symbol von Will It Budget?"
     >
+    <span>Will It Budget?</span>
+  </a>
 
-GASI: Weekly Budget Planner
-
-  </div>
-
-  <div class="lang">
-    <a href="marketing.html" lang="en">English</a>
-  </div>
-
+  <nav aria-label="Hauptnavigation">
+    <a href="#how-it-works">So funktioniert’s</a>
+    <a href="#inside">In der App</a>
+    <a href="privacy_de.html">Datenschutz</a>
+    <a href="mailto:support@goaheadspendit.com">Support</a>
+  </nav>
 </header>
 
-<section class="hero">
+<main id="top">
 
-  <div class="trust-pill">
-    Keine Werbung • Kein Abo • Keine Bankverbindung • Kein Konto
-  </div>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">
+        Umgang mit Geld durch alltägliche Entscheidungen
+      </p>
 
-  <h1>
-    Erst entscheiden.<br>
-    Dann ausgeben.
-  </h1>
+      <h1>Gute Geldgewohnheiten entwickeln.</h1>
 
-  <p>
-    GASI ist ein ruhiges Ausgaben-Tool, das jede Entscheidung in einen klaren
-    7-Tage-Rahmen stellt, damit du sehen kannst, was dein Geld bis
-    zum nächsten Reset noch abdecken muss.
-  </p>
+      <p class="hero-copy">
+        Will It Budget? hilft Schülern und Familien, mit einer visuellen
+        Geldbörse, Geldmarken und Ausgabenkacheln den bewussten Umgang mit
+        Taschengeld zu üben.
 
-  <div class="mini-badge">
-    Ruhige Wochenbudget-Planung für iPhone und iPad
-  </div>
+        <span class="hero-question">
+          Ziehe eine Geldmarke. Sieh, wie sich dein Taschengeld verändert.
+          Passt es ins Budget?
+        </span>
+      </p>
 
-<img
-src="German_iphone_w_header.001.png"
-alt="GASI mit Wallet, Geldchips und Ausgabenkacheln"
+      <div class="actions">
+        <a
+          class="button button-primary"
+          href="https://apps.apple.com/de/app/id6759508801"
+        >
+          Im App Store ansehen
+        </a>
 
->
+        <a class="button button-secondary" href="#how-it-works">
+          So funktioniert’s
+        </a>
+      </div>
+    </div>
 
-</section>
+    <div class="app-icon-wrap" aria-hidden="true">
+      <img
+        class="app-icon"
+        src="assets/press/app-icon.png"
+        alt=""
+      >
+    </div>
+  </section>
 
-<section class="section">
+  <section class="section" id="how-it-works">
+    <div class="section-heading">
+      <h2>Ziehen. Ablegen. Entscheiden.</h2>
 
-  <h2>
-    Eine Wallet. Klare Entscheidungen.
-  </h2>
+      <p>
+        Geldentscheidungen werden leichter verständlich, wenn du siehst,
+        was nach jeder Entscheidung passiert.
+      </p>
+    </div>
 
-  <p>
-    Dein Budget lebt in einer einzigen Wallet.
-    Geldchips sind dein Geld.
-    Kacheln sind deine Ausgabenkategorien.
+    <div class="steps">
+      <article class="card">
+        <span class="step-number">1</span>
 
-Wenn du Geld ausgibst, verschiebst du Geldchips auf Kacheln
-und machst jede Entscheidung sichtbar, greifbar
-und leichter beurteilbar.
+        <h3>Taschengeld prüfen</h3>
 
-  </p>
+        <p>
+          Sieh, wie viel noch übrig ist und wie viel Zeit in der aktuellen
+          wöchentlichen oder monatlichen Taschengeldperiode verbleibt.
+        </p>
+      </article>
 
-</section>
+      <article class="card">
+        <span class="step-number">2</span>
 
-<section class="section">
+        <h3>Ausgabenkachel auswählen</h3>
 
-  <h2>
-    Sieh den Rahmen vor dem Kauf
-  </h2>
+        <p>
+          Ordne alltägliche Käufe mit vorgeschlagenen oder eigenen
+          Ausgabenkacheln für die Dinge, die dir wichtig sind.
+        </p>
+      </article>
 
-  <p>
-    Die meisten Budget-Apps zeigen dir, wohin dein Geld gegangen ist.
+      <article class="card">
+        <span class="step-number">3</span>
 
-GASI hilft dir zu entscheiden, wohin es als Nächstes gehen soll.
+        <h3>Geldmarke bewegen</h3>
 
-Der Ring zeigt die verbleibende Zeit in deinem 7-Tage-Zeitraum,
-damit jede Ausgabe im Zusammenhang mit dem steht,
-was bis zum nächsten Reset noch abgedeckt werden muss.
+        <p>
+          Ziehe eine Geldmarke auf eine Ausgabenkachel, erfasse die Ausgabe
+          und sieh, wie sich die Entscheidung auf dein Taschengeld auswirkt.
+        </p>
+      </article>
+    </div>
+  </section>
 
-  </p>
+  <section class="section" id="inside">
+    <div class="section-heading">
+      <h2>In der App</h2>
 
-</section>
+      <p>
+        Ein einfaches Taschengeld-Werkzeug, das alltägliche Geldentscheidungen
+        sichtbar, verständlich und leichter besprechbar macht.
+      </p>
+    </div>
 
-<section class="section">
+    <div class="feature-grid">
+      <article class="card">
+        <h3>Visuelle Geldmarken</h3>
 
-  <h2>
-    Privat von Anfang an
-  </h2>
+        <p>
+          Nutze Geldmarken per Drag-and-drop, um Ausgabenentscheidungen
+          praktisch zu üben, statt nur über Budgetierung zu lesen.
+        </p>
+      </article>
 
-  <p>
-    GASI funktioniert vollständig auf deinem Gerät.
+      <article class="card">
+        <h3>Wöchentliche oder monatliche Perioden</h3>
 
-Kein Konto.
-Keine Analyse-Tools.
-Keine Werbung.
-Kein Tracking durch Dritte.
+        <p>
+          Wähle den passenden Taschengeldrhythmus. Auf Wunsch bleibt
+          nicht ausgegebenes Geld für die nächste Periode erhalten.
+        </p>
+      </article>
 
-  </p>
+      <article class="card">
+        <h3>Hilfreiche Startvorschläge</h3>
 
-</section>
+        <p>
+          Beginne schnell mit vorgeschlagenen Ausgabenkacheln oder erstelle
+          eigene Kacheln für deine persönlichen Prioritäten.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Warum Budgetieren zählt</h3>
+
+        <p>
+          Entdecke verständliche Lerninhalte über Entscheidungen,
+          Prioritäten, Gewohnheiten und darüber, warum Budgetieren wichtig ist.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>iPhone, iPad und Widgets</h3>
+
+        <p>
+          Nutze die App auf iPhone und iPad. Widgets für den Home-Bildschirm
+          und Sperrbildschirm zeigen hilfreiche Informationen zu deinem
+          Taschengeld.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Für Schüler und Familien</h3>
+
+        <p>
+          Geeignet zum Üben mit dem eigenen Taschengeld, für Gespräche in
+          der Familie, für den Unterricht und für Lernaktivitäten zu Hause.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="promise">
+      <div>
+        <h2>Datenschutz von Anfang an.</h2>
+
+        <div class="promise-list">
+          <div class="promise-item">
+            <span class="check">✓</span>
+
+            <span>
+              Deine Taschengeld- und Ausgabeninformationen bleiben auf
+              deinem Gerät.
+            </span>
+          </div>
+
+          <div class="promise-item">
+            <span class="check">✓</span>
+
+            <span>Kein Benutzerkonto und keine Anmeldung.</span>
+          </div>
+
+          <div class="promise-item">
+            <span class="check">✓</span>
+
+            <span>Keine Werbung und kein Tracking durch Dritte.</span>
+          </div>
+
+          <div class="promise-item">
+            <span class="check">✓</span>
+
+            <span>Keine Abonnements oder In-App-Käufe.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="callout">
+        <strong>Simple. Affordable. Fun.</strong>
+
+        <p>
+          Will It Budget? ist unabhängige Software, die praktisches Lernen
+          rund ums Geld einfach, zugänglich und entspannt macht.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>
+      Gute Geldgewohnheiten beginnen mit einer einzigen
+      Ausgabenentscheidung.
+    </h2>
+
+    <p>
+      Plane einen Kauf, prüfe dein Taschengeld und stell dir die Frage:
+      Passt es ins Budget?
+    </p>
+
+    <div class="actions">
+      <a
+        class="button button-primary"
+        href="https://apps.apple.com/de/app/id6759508801"
+      >
+        Im App Store ansehen
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
+  <div>
+    <strong>Will It Budget?</strong>
 
-  <a href="privacy_de.html">
-    Datenschutzerklärung
-  </a>
+    <div class="legacy">
+      Früher bekannt als GoAheadSpendIt (GASI).
+    </div>
+  </div>
 
-  <a href="support_de.html">
-    Support
-  </a>
-
-  <a href="press/index.html">
-    Press Kit
-  </a>
-
-  <a href="marketing.html" lang="en">
-    English
-  </a>
-
+  <div class="footer-links">
+    <a href="privacy_de.html">Datenschutzerklärung</a>
+    <a href="index.html" lang="en">English Privacy Policy</a>
+    <a href="mailto:support@goaheadspendit.com">Support</a>
+    <a href="mailto:privacy@goaheadspendit.com">Datenschutzkontakt</a>
+  </div>
 </footer>
 
 </body>
