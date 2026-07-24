@@ -1,97 +1,338 @@
 <!doctype html>
+
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GoAheadSpendIt Support</title>
-  <meta name="description" content="Support und Datenschutzlinks für GoAheadSpendIt." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Will It Budget? Support</title>
+
+  <meta
+    name="description"
+    content="Support, Datenschutzinformationen und hilfreiche Links für Will It Budget?"
+  >
+
+  <link rel="icon" href="assets/press/app-icon.png">
 
   <style>
-    :root { color-scheme: light dark; }
+    :root {
+      color-scheme: light dark;
+
+      --bg: #f3eee7;
+      --surface: #fbf8f4;
+      --text: #1f2321;
+      --subtext: #666c67;
+      --rule: #ded5ca;
+      --link: #8a5a24;
+      --accent: #b98538;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.55;
-      background: #ffffff;
-      color: #1d1d1f;
-    }
 
-    @media (prefers-color-scheme: dark) {
-      body { background: #000000; color: #f5f5f7; }
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.55;
+      background: var(--bg);
+      color: var(--text);
     }
 
     .wrap {
-      max-width: 760px;
+      width: min(760px, calc(100% - 36px));
       margin: 0 auto;
-      padding: 48px 18px;
+      padding: 48px 0 60px;
     }
 
-    h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.02em; }
-    .tagline { font-size: 18px; margin: 0 0 20px; opacity: 0.85; }
-    .sub { font-size: 15px; margin: 0 0 28px; opacity: 0.75; max-width: 60ch; }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .tagline {
+      margin: 6px 0 0;
+      font-size: 18px;
+      color: var(--subtext);
+    }
+
+    .intro {
+      max-width: 64ch;
+      margin: 0 0 30px;
+      font-size: 17px;
+      color: var(--subtext);
+    }
 
     .card {
-      border: 1px solid rgba(127,127,127,0.25);
-      border-radius: 14px;
-      padding: 16px 16px;
-      margin: 14px 0;
+      margin: 16px 0;
+      padding: 20px;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      background: var(--surface);
     }
 
     .label {
+      margin-bottom: 10px;
+      color: var(--accent);
       font-size: 13px;
-      text-transform: uppercase;
+      font-weight: 700;
       letter-spacing: 0.08em;
-      opacity: 0.7;
-      margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
 
-    .links a { margin-right: 14px; }
+    p {
+      margin: 0.7em 0;
+    }
 
-    .lang a { font-size: 0.9em; opacity: 0.7; }
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
 
-    footer { margin-top: 28px; font-size: 13px; opacity: 0.7; }
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 0.16em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 8px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: var(--link);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule);
+      color: var(--subtext);
+      font-size: 13px;
+    }
+
+    .legacy {
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11100f;
+        --surface: #1a1816;
+        --text: #f6f2ed;
+        --subtext: #bbb5ae;
+        --rule: rgba(255, 255, 255, 0.14);
+        --link: #e1b35f;
+        --accent: #e1b35f;
+      }
+    }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <h1>GoAheadSpendIt</h1>
-    <p class="tagline">Erst entscheiden. Dann ausgeben.</p>
-    <p class="sub">
-      Eine private Budget-App, die vollständig auf deinem Gerät läuft und dir hilft,
-      innerhalb eines klaren 7-Tage-Rahmens bewusste Ausgabenentscheidungen zu treffen.
-      Kein Tracking. Keine Analyse-Tools. Keine externen Server.
+
+    <div class="brand">
+      <img
+        src="assets/press/app-icon.png"
+        alt="App-Symbol von Will It Budget?"
+      >
+
+      <div>
+        <h1>Will It Budget? Support</h1>
+        <p class="tagline">
+          Umgang mit Geld durch alltägliche Ausgabenentscheidungen.
+        </p>
+      </div>
+    </div>
+
+    <p class="intro">
+      Will It Budget? ist eine App für Taschengeld und den Umgang mit Geld,
+      entwickelt für Schüler und Familien. Eine visuelle Geldbörse,
+      Geldmarken und Ausgabenkacheln machen alltägliche
+      Ausgabenentscheidungen leichter verständlich.
     </p>
 
     <section class="card">
-      <div class="label">Support</div>
-      <div>
+      <div class="label">Support kontaktieren</div>
+
+      <h2>Brauchst du Hilfe mit der App?</h2>
+
+      <p>
         E-Mail:
-        <a href="mailto:support@goaheadspendit.com?subject=GoAheadSpendIt%20Support&body=Bitte%20angeben%3A%0A-%20App-Version%0A-%20iOS-Version%0A-%20Ger%C3%A4temodell%0A%0ABeschreibung%3A%0A">
+        <a href="mailto:support@goaheadspendit.com">
           support@goaheadspendit.com
         </a>
-      </div>
-      <p style="margin:10px 0 0; font-size:14px; opacity:0.75;">
-        Bitte gib deine App-Version, iOS-Version und dein Gerätemodell an.
+      </p>
+
+      <p>
+        Bitte gib an, welches Gerät du verwendest, welche iOS- oder
+        iPadOS-Version installiert ist und was genau passiert ist.
       </p>
     </section>
 
     <section class="card">
-      <div class="label">Datenschutzerklärung</div>
+      <div class="label">Schnelle Hilfe</div>
+
+      <h2>Häufige Punkte zum Überprüfen</h2>
+
+      <ul>
+        <li>
+          Öffne die App einmal, bevor du ein Widget zum Home-Bildschirm oder
+          Sperrbildschirm hinzufügst.
+        </li>
+
+        <li>
+          Taschengeldperioden können wöchentlich oder monatlich sein und
+          lassen sich in den Einstellungen ändern.
+        </li>
+
+        <li>
+          Mit aktiviertem Übertrag bleibt nicht ausgegebenes Geld in der
+          nächsten Taschengeldperiode verfügbar.
+        </li>
+
+        <li>
+          Vorgeschlagene oder eigene Ausgabenkacheln können auf dem
+          Taschengeldbildschirm hinzugefügt werden.
+        </li>
+
+        <li>
+          Ziehe eine Geldmarke auf eine Ausgabenkachel, um eine Ausgabe
+          einzutragen.
+        </li>
+
+        <li>
+          Die Kurzanleitung, „So funktioniert’s“ und „Warum Budgetieren zählt“
+          findest du in den Einstellungen.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="label">Datenschutz</div>
+
+      <h2>Datenschutz von Anfang an</h2>
+
+      <p>
+        Für Will It Budget? sind weder ein Benutzerkonto noch eine Anmeldung
+        erforderlich. Informationen über Taschengeld und Ausgaben bleiben
+        lokal auf deinem Gerät gespeichert.
+      </p>
+
+      <p>
+        Die App enthält keine Werbung, Abonnements, Analysen von Drittanbietern
+        oder verhaltensbezogenes Tracking.
+      </p>
+
       <div class="links">
-        <a href="./">English</a>
-        <a href="privacy_de.html">Deutsch</a>
+        <a href="index.html" lang="en">English Privacy Policy</a>
+        <a href="privacy_de.html">Deutsche Datenschutzerklärung</a>
       </div>
     </section>
 
-    <footer class="lang">
-      Sprache: <a href="support.html">English</a>
+    <section class="card">
+      <div class="label">App Store</div>
+
+      <h2>Will It Budget? im App Store</h2>
+
+      <p>
+        Sieh dir den aktuellen App-Store-Eintrag mit Screenshots,
+        Beschreibung und Verfügbarkeit an.
+      </p>
+
+      <a
+        class="button"
+        href="https://apps.apple.com/de/app/id6759508801"
+      >
+        Im App Store ansehen
+      </a>
+    </section>
+
+    <section class="card">
+      <div class="label">Weitere Informationen</div>
+
+      <div class="links">
+        <a href="marketing_de.html">Will It Budget? Startseite</a>
+        <a href="mailto:privacy@goaheadspendit.com">Datenschutzkontakt</a>
+      </div>
+    </section>
+
+    <footer>
+      <strong>Will It Budget?</strong>
+
+      <div>
+        Unabhängige Software – Simple. Affordable. Fun.
+      </div>
+
+      <div class="legacy">
+        Früher bekannt als GoAheadSpendIt (GASI).
+      </div>
     </footer>
+
   </main>
 </body>
 </html>
