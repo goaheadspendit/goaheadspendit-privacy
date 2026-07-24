@@ -2,86 +2,330 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GASI Support</title>
-  <meta name="description" content="GASI support and privacy links." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Will It Budget? Support</title>
+
+  <meta
+    name="description"
+    content="Support, privacy information, and helpful links for Will It Budget?"
+  >
+
+  <link rel="icon" href="assets/press/app-icon.png">
+
   <style>
-    :root { color-scheme: light dark; }
+    :root {
+      color-scheme: light dark;
+
+      --bg: #f3eee7;
+      --surface: #fbf8f4;
+      --text: #1f2321;
+      --subtext: #666c67;
+      --rule: #ded5ca;
+      --link: #8a5a24;
+      --accent: #b98538;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
       line-height: 1.55;
-      background: #ffffff;
-      color: #1d1d1f;
+      background: var(--bg);
+      color: var(--text);
     }
+
+    .wrap {
+      width: min(760px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 48px 0 60px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .tagline {
+      margin: 6px 0 0;
+      font-size: 18px;
+      color: var(--subtext);
+    }
+
+    .intro {
+      max-width: 64ch;
+      margin: 0 0 30px;
+      font-size: 17px;
+      color: var(--subtext);
+    }
+
+    .card {
+      margin: 16px 0;
+      padding: 20px;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      background: var(--surface);
+    }
+
+    .label {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin: 0.7em 0;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: 0.16em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 8px;
+      padding: 0 18px;
+      border-radius: 12px;
+      background: var(--link);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding-top: 22px;
+      border-top: 1px solid var(--rule);
+      color: var(--subtext);
+      font-size: 13px;
+    }
+
+    .legacy {
+      margin-top: 6px;
+      opacity: 0.75;
+    }
+
     @media (prefers-color-scheme: dark) {
-      body { background: #000000; color: #f5f5f7; }
+      :root {
+        --bg: #11100f;
+        --surface: #1a1816;
+        --text: #f6f2ed;
+        --subtext: #bbb5ae;
+        --rule: rgba(255, 255, 255, 0.14);
+        --link: #e1b35f;
+        --accent: #e1b35f;
+      }
     }
-
-```
-.wrap {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 48px 18px;
-}
-h1 { font-size: 34px; margin: 0 0 6px; letter-spacing: -0.02em; }
-.tagline { font-size: 18px; margin: 0 0 20px; opacity: 0.85; }
-.sub { font-size: 15px; margin: 0 0 28px; opacity: 0.75; max-width: 60ch; }
-
-.card {
-  border: 1px solid rgba(127,127,127,0.25);
-  border-radius: 14px;
-  padding: 16px 16px;
-  margin: 14px 0;
-}
-.label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 8px; }
-
-a { color: #0066cc; text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.links a { margin-right: 14px; }
-
-.lang a { font-size: 0.9em; opacity: 0.7; }
-
-footer { margin-top: 28px; font-size: 13px; opacity: 0.7; }
-```
-
   </style>
 </head>
+
 <body>
   <main class="wrap">
-    <h1>GASI</h1>
-    <p class="tagline">Decide before you spend.</p>
-    <p class="sub">A private, on-device budgeting app designed to help you make clear spending decisions within a calm 7-day boundary. No tracking. No analytics. No external servers.</p>
 
-```
-<section class="card">
-  <div class="label">Support</div>
-  <div>
-    Email:
-    <a href="mailto:support@goaheadspendit.com?subject=GASI%20Support&body=Please%20include%3A%0A-%20App%20version%0A-%20iOS%20version%0A-%20Device%20model%0A%0ADescription%3A%0A">
-      support@goaheadspendit.com
-    </a>
-  </div>
-  <p style="margin:10px 0 0; font-size:14px; opacity:0.75;">
-    Please include your app version, iOS version, and device model.
-  </p>
-</section>
+    <div class="brand">
+      <img
+        src="assets/press/app-icon.png"
+        alt="Will It Budget? app icon"
+      >
 
-<section class="card">
-  <div class="label">Privacy Policy</div>
-  <div class="links">
-    <a href="index.html">English</a>
-    <a href="privacy_de.html">Deutsch</a>
-  </div>
-</section>
+      <div>
+        <h1>Will It Budget? Support</h1>
+        <p class="tagline">Money skills through everyday spending decisions.</p>
+      </div>
+    </div>
 
-<footer class="lang">
-  Language: <a href="support_de.html">Deutsch</a>
-</footer>
-```
+    <p class="intro">
+      Will It Budget? is an allowance and money-skills app for students and
+      families. It uses a visual wallet, money tokens, and Spending Tiles to
+      make everyday spending decisions easier to understand.
+    </p>
+
+    <section class="card">
+      <div class="label">Contact Support</div>
+
+      <h2>Need help with the app?</h2>
+
+      <p>
+        Email:
+        <a href="mailto:support@goaheadspendit.com">
+          support@goaheadspendit.com
+        </a>
+      </p>
+
+      <p>
+        Please include the device you are using, your iOS or iPadOS version,
+        and a brief description of what happened.
+      </p>
+    </section>
+
+    <section class="card">
+      <div class="label">Quick Help</div>
+
+      <h2>Common things to check</h2>
+
+      <ul>
+        <li>
+          Open the app once before adding a Home Screen or Lock Screen widget.
+        </li>
+
+        <li>
+          Allowance periods can be weekly or monthly and can be changed in
+          Settings.
+        </li>
+
+        <li>
+          Optional carryover keeps unused money available in the next allowance
+          period.
+        </li>
+
+        <li>
+          Suggested or custom Spending Tiles can be added from the allowance
+          screen.
+        </li>
+
+        <li>
+          Drag a money token onto a Spending Tile to record spending.
+        </li>
+
+        <li>
+          The Quick Guide, How It Works, and Budgeting Matters are available
+          inside Settings.
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="label">Privacy</div>
+
+      <h2>Private by design</h2>
+
+      <p>
+        Will It Budget? does not require an account or sign-in. Allowance and
+        spending information remains stored locally on your device.
+      </p>
+
+      <p>
+        The app does not include advertising, subscriptions, third-party
+        analytics, or behavioral tracking.
+      </p>
+
+      <div class="links">
+        <a href="index.html">English Privacy Policy</a>
+        <a href="privacy_de.html" lang="de">Deutsche Datenschutzerklärung</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="label">App Store</div>
+
+      <h2>View Will It Budget?</h2>
+
+      <p>
+        See the current app listing, screenshots, description, and availability
+        on the App Store.
+      </p>
+
+      <a
+        class="button"
+        href="https://apps.apple.com/us/app/id6759508801"
+      >
+        View on the App Store
+      </a>
+    </section>
+
+    <section class="card">
+      <div class="label">More Information</div>
+
+      <div class="links">
+        <a href="marketing.html">Will It Budget? Home</a>
+        <a href="mailto:privacy@goaheadspendit.com">Privacy Contact</a>
+      </div>
+    </section>
+
+    <footer>
+      <strong>Will It Budget?</strong>
+
+      <div>
+        Independent software that’s Simple. Affordable. Fun.
+      </div>
+
+      <div class="legacy">
+        Formerly known as GoAheadSpendIt (GASI).
+      </div>
+    </footer>
 
   </main>
 </body>
