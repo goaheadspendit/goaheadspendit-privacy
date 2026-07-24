@@ -5,43 +5,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GASI — Decide before you spend.</title>
+<title>Will It Budget? — Build Money Skills</title>
 
 <meta
-name="description"
-content="GASI is a calm spending tool that helps you decide before you spend, inside a clear 7-day boundary."
-
+  name="description"
+  content="Will It Budget? teaches money skills through everyday spending decisions. Use money tokens and Spending Tiles to practice thoughtful allowance spending."
 >
 
-<link rel="icon" href="app-icon.png">
+<link rel="icon" href="assets/press/app-icon.png">
 
 <style>
+:root {
+  color-scheme: light dark;
 
-:root{
-  --bg:#f3eee7;
-  --surface:#f8f5f1;
-  --text:#1f2321;
-  --subtext:#6f746f;
-  --rule:#e4ddd4;
-  --link:#9a6b3c;
+  --bg: #f3eee7;
+  --surface: #fbf8f4;
+  --surface-strong: #ffffff;
+  --text: #1f2321;
+  --subtext: #666c67;
+  --rule: #e2d9cf;
+  --accent: #b98538;
+  --accent-dark: #805726;
+  --button-text: #ffffff;
 
   --shadow-soft:
-    0 20px 40px rgba(0,0,0,.06);
+    0 18px 42px rgba(45, 34, 20, 0.08);
 
-  --hero-shadow:
-    0 30px 60px rgba(0,0,0,.10);
+  --shadow-icon:
+    0 20px 44px rgba(45, 34, 20, 0.16);
 }
 
-*{
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-html{
-  -webkit-text-size-adjust:100%;
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
+body {
+  margin: 0;
 
   font-family:
     -apple-system,
@@ -52,364 +56,619 @@ body{
     Arial,
     sans-serif;
 
-  background:var(--bg);
-  color:var(--text);
+  line-height: 1.55;
+  background: var(--bg);
+  color: var(--text);
 }
 
-a{
-  text-decoration:none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:24px 32px;
-
-  background:rgba(255,255,255,.32);
-
-  border-bottom:1px solid var(--rule);
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-
-  font-weight:700;
-  font-size:20px;
-
-  letter-spacing:-0.02em;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.app-icon{
-  width:40px;
-  height:40px;
-
-  border-radius:10px;
-
-  box-shadow:var(--shadow-soft);
+header,
+main,
+footer {
+  width: min(1120px, calc(100% - 40px));
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.lang{
-  font-size:15px;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
 }
 
-.lang a,
-footer a{
-  color:var(--link);
-
-  text-decoration:none;
-
-  text-underline-offset:.14em;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.lang a:hover,
-.lang a:focus-visible,
-footer a:hover,
-footer a:focus-visible{
-  text-decoration:underline;
+.brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 11px;
 }
 
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
-  text-align:center;
-
-  padding:
-    88px
-    20px
-    56px;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+  font-size: 15px;
+  color: var(--subtext);
 }
 
-.trust-pill{
-  display:inline-block;
-
-  margin:0 0 28px;
-
-  padding:12px 18px;
-
-  border-radius:999px;
-
-  background:rgba(255,255,255,.55);
-
-  border:1px solid var(--rule);
-
-  color:#9a6b3c;
-
-  font-size:15px;
-  font-weight:600;
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 100px);
+  min-height: 620px;
+  padding: 70px 0 90px;
 }
 
-.hero h1{
-  font-size:clamp(2.7rem,7vw,5rem);
-
-  line-height:.94;
-
-  font-weight:700;
-
-  letter-spacing:-0.06em;
-
-  margin:0 0 24px;
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--accent-dark);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 13px;
 }
 
-.hero p{
-  font-size:clamp(1.15rem,2.6vw,1.4rem);
-
-  color:var(--subtext);
-
-  max-width:760px;
-
-  line-height:1.65;
-
-  margin:0;
+h1 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(46px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
 }
 
-.mini-badge{
-  margin-top:34px;
-  margin-bottom:-6px;
-
-  font-size:14px;
-  font-weight:600;
-
-  letter-spacing:.01em;
-
-  color:var(--subtext);
+.hero-copy {
+  max-width: 690px;
+  margin: 28px 0 0;
+  font-size: clamp(19px, 2vw, 23px);
+  color: var(--subtext);
 }
 
-.hero img{
-  margin-top:44px;
-
-  width:min(360px,90vw);
-
-  border-radius:32px;
-
-  box-shadow:
-    0 24px 60px rgba(0,0,0,.10);
+.hero-question {
+  display: block;
+  margin-top: 18px;
+  color: var(--text);
+  font-weight: 700;
 }
 
-.section{
-  max-width:860px;
-
-  margin:0 auto;
-
-  padding:
-    76px
-    24px;
-
-  text-align:center;
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
 }
 
-.section h2{
-  font-size:clamp(2rem,5vw,2.5rem);
-
-  line-height:1.08;
-
-  letter-spacing:-0.04em;
-
-  margin:0 0 22px;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 14px;
+  font-weight: 700;
 }
 
-.section p{
-  font-size:19px;
-
-  color:var(--subtext);
-
-  line-height:1.8;
-
-  max-width:720px;
-
-  margin:0 auto;
+.button-primary {
+  background: var(--accent-dark);
+  color: var(--button-text);
 }
 
-footer{
-  text-align:center;
-
-  font-size:15px;
-
-  color:var(--subtext);
-
-  padding:
-    48px
-    20px
-    64px;
-
-  border-top:1px solid var(--rule);
+.button-secondary {
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.4);
 }
 
-footer a{
-  margin:0 12px;
-
-  font-weight:600;
+.button:hover,
+.button:focus-visible {
+  text-decoration: none;
+  transform: translateY(-1px);
 }
 
-@media (max-width:640px){
+.app-icon-wrap {
+  display: flex;
+  justify-content: center;
+}
 
-  header{
-    padding:18px 20px;
+.app-icon {
+  width: min(330px, 72vw);
+  border-radius: 25%;
+  box-shadow: var(--shadow-icon);
+}
+
+.section {
+  padding: 90px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 44px;
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.section-heading p {
+  margin: 18px 0 0;
+  font-size: 19px;
+  color: var(--subtext);
+}
+
+.steps,
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  padding: 28px;
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: #ead5aa;
+  color: #5a3c18;
+  font-weight: 800;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  margin: 12px 0 0;
+  color: var(--subtext);
+}
+
+.promise {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+  align-items: center;
+  gap: 60px;
+}
+
+.promise-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.promise-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.check {
+  color: var(--accent-dark);
+  font-weight: 900;
+}
+
+.callout {
+  padding: 34px;
+  border-radius: 24px;
+  background: var(--surface-strong);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-soft);
+}
+
+.callout strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  letter-spacing: -0.025em;
+}
+
+.callout p {
+  margin: 0;
+  color: var(--subtext);
+}
+
+.final-cta {
+  text-align: center;
+  padding: 100px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.final-cta h2 {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta p {
+  max-width: 650px;
+  margin: 22px auto 0;
+  color: var(--subtext);
+  font-size: 19px;
+}
+
+.final-cta .actions {
+  justify-content: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 30px 0 46px;
+  border-top: 1px solid var(--rule);
+  color: var(--subtext);
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.legacy {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+@media (max-width: 820px) {
+  header {
+    align-items: flex-start;
   }
 
-  .brand{
-    font-size:18px;
-    gap:10px;
+  nav {
+    gap: 12px 16px;
   }
 
-  .app-icon{
-    width:36px;
-    height:36px;
-
-    border-radius:9px;
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 50px;
   }
 
-  .hero{
-    padding-top:72px;
+  .app-icon-wrap {
+    order: -1;
+    justify-content: flex-start;
   }
 
-  .hero h1{
-    line-height:.98;
+  .app-icon {
+    width: 150px;
   }
 
-  .trust-pill{
-    font-size:14px;
-    line-height:1.5;
+  .steps,
+  .feature-grid,
+  .promise {
+    grid-template-columns: 1fr;
   }
 
-  footer a{
-    display:inline-block;
-    margin:6px 10px;
+  footer {
+    flex-direction: column;
   }
 }
 
+@media (max-width: 560px) {
+  header,
+  main,
+  footer {
+    width: min(100% - 28px, 1120px);
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  .hero {
+    padding-bottom: 70px;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  .card {
+    padding: 23px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11100f;
+    --surface: #191715;
+    --surface-strong: #1d1a17;
+    --text: #f6f2ed;
+    --subtext: #bbb5ae;
+    --rule: rgba(255, 255, 255, 0.13);
+    --accent: #d7aa5c;
+    --accent-dark: #d7aa5c;
+    --button-text: #17120c;
+  }
+
+  .button-secondary {
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-  <div class="brand">
+  <a class="brand" href="#top" aria-label="Will It Budget? home">
     <img
-      src="app-icon.png"
-      class="app-icon"
-      alt="GASI app icon"
+      src="assets/press/app-icon.png"
+      alt="Will It Budget? app icon"
     >
+    <span>Will It Budget?</span>
+  </a>
 
-GASI: Weekly Budget Planner
-
-  </div>
-
-  <div class="lang">
-    <a href="marketing_de.html" lang="de">Deutsch</a>
-  </div>
-
+  <nav aria-label="Main navigation">
+    <a href="#how-it-works">How It Works</a>
+    <a href="#inside">Inside the App</a>
+    <a href="index.html">Privacy</a>
+    <a href="mailto:support@goaheadspendit.com">Support</a>
+  </nav>
 </header>
 
-<section class="hero">
+<main id="top">
 
-  <div class="trust-pill">
-    No ads • No subscription • No bank sync • No account
-  </div>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Money skills through everyday decisions</p>
 
-  <h1>
-    Decide before you spend.
-  </h1>
+      <h1>Build smarter spending habits.</h1>
 
-  <p>
-    GASI is a calm spending tool that places each choice inside a clear
-    7-day boundary, so you can see what your money still needs
-    to cover before the next reset.
-  </p>
+      <p class="hero-copy">
+        Will It Budget? helps students and families practice thoughtful
+        allowance spending with a visual wallet, money tokens, and
+        Spending Tiles.
 
-  <div class="mini-badge">
-    Calm weekly budgeting for iPhone and iPad
-  </div>
+        <span class="hero-question">
+          Move a token. See your allowance change. Will it budget?
+        </span>
+      </p>
 
-<img
-src="English_iphone_w_header.001.png"
-alt="GASI showing a wallet, tokens, and spending tiles"
+      <div class="actions">
+        <a
+          class="button button-primary"
+          href="YOUR_APP_STORE_URL"
+        >
+          View on the App Store
+        </a>
 
->
+        <a class="button button-secondary" href="#how-it-works">
+          See How It Works
+        </a>
+      </div>
+    </div>
 
-</section>
+    <div class="app-icon-wrap" aria-hidden="true">
+      <img
+        class="app-icon"
+        src="assets/press/app-icon.png"
+        alt=""
+      >
+    </div>
+  </section>
 
-<section class="section">
+  <section class="section" id="how-it-works">
+    <div class="section-heading">
+      <h2>Drag. Drop. Decide.</h2>
 
-  <h2>
-    One wallet. Clear choices.
-  </h2>
+      <p>
+        Money choices become easier to understand when you can see what
+        happens after each decision.
+      </p>
+    </div>
 
-  <p>
-    Your budget lives in one wallet.
-    Tokens are your money.
-    Tiles are your spending categories.
+    <div class="steps">
+      <article class="card">
+        <span class="step-number">1</span>
+        <h3>Check your allowance</h3>
+        <p>
+          See what remains and how much time is left in the current weekly
+          or monthly allowance period.
+        </p>
+      </article>
 
-As you spend, you move tokens onto tiles
-and make each choice visible, tangible,
-and easier to judge.
+      <article class="card">
+        <span class="step-number">2</span>
+        <h3>Choose a Spending Tile</h3>
+        <p>
+          Organize everyday purchases with suggested or custom tiles for
+          the things that matter to you.
+        </p>
+      </article>
 
-  </p>
+      <article class="card">
+        <span class="step-number">3</span>
+        <h3>Move a money token</h3>
+        <p>
+          Drag a token onto a Spending Tile, record the purchase, and see
+          how the decision changes your allowance.
+        </p>
+      </article>
+    </div>
+  </section>
 
-</section>
+  <section class="section" id="inside">
+    <div class="section-heading">
+      <h2>Inside the App</h2>
 
-<section class="section">
+      <p>
+        A simple allowance tool designed to make everyday money decisions
+        visible, understandable, and easier to discuss.
+      </p>
+    </div>
 
-  <h2>
-    See the boundary before the purchase
-  </h2>
+    <div class="feature-grid">
+      <article class="card">
+        <h3>Visual money tokens</h3>
+        <p>
+          Use drag-and-drop tokens to practice spending decisions instead
+          of only reading about budgeting.
+        </p>
+      </article>
 
-  <p>
-    Most budget apps show you where your money went.
+      <article class="card">
+        <h3>Weekly or monthly periods</h3>
+        <p>
+          Choose the allowance rhythm that works best, with optional
+          carryover for money that remains.
+        </p>
+      </article>
 
-GASI helps you decide where it should go next.
+      <article class="card">
+        <h3>Helpful starter suggestions</h3>
+        <p>
+          Quickly begin with suggested Spending Tiles, or create custom
+          tiles for personal priorities.
+        </p>
+      </article>
 
-The ring shows the time remaining in your 7-day period,
-so spending is always seen in the context of what still
-has to be covered before the next reset.
+      <article class="card">
+        <h3>Budgeting Matters</h3>
+        <p>
+          Explore approachable educational content about choices,
+          priorities, habits, and why budgeting matters.
+        </p>
+      </article>
 
-  </p>
+      <article class="card">
+        <h3>iPhone, iPad, and widgets</h3>
+        <p>
+          Use the app across iPhone and iPad, with Home Screen and Lock
+          Screen widgets for helpful allowance information.
+        </p>
+      </article>
 
-</section>
+      <article class="card">
+        <h3>Made for students and families</h3>
+        <p>
+          Useful for personal allowance practice, family conversations,
+          classroom discussions, and homeschool activities.
+        </p>
+      </article>
+    </div>
+  </section>
 
-<section class="section">
+  <section class="section">
+    <div class="promise">
+      <div>
+        <h2>Private by design.</h2>
 
-  <h2>
-    Private by design
-  </h2>
+        <div class="promise-list">
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span>Your allowance and spending information stay on your device.</span>
+          </div>
 
-  <p>
-    GASI works entirely on your device.
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span>No accounts or sign-in.</span>
+          </div>
 
-No account.
-No analytics.
-No ads.
-No third-party tracking.
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span>No ads or third-party tracking.</span>
+          </div>
 
-  </p>
+          <div class="promise-item">
+            <span class="check">✓</span>
+            <span>No subscriptions or in-app purchases.</span>
+          </div>
+        </div>
+      </div>
 
-</section>
+      <aside class="callout">
+        <strong>Simple. Affordable. Fun.</strong>
+
+        <p>
+          Will It Budget? is independent software built to make practical
+          money learning approachable and calm.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>Good money habits begin with one spending decision.</h2>
+
+    <p>
+      Plan a purchase, check your allowance, and ask the question:
+      Will it budget?
+    </p>
+
+    <div class="actions">
+      <a
+        class="button button-primary"
+        href="YOUR_APP_STORE_URL"
+      >
+        View on the App Store
+      </a>
+    </div>
+  </section>
+
+</main>
 
 <footer>
+  <div>
+    <strong>Will It Budget?</strong>
 
-  <a href="index.html">
-    Privacy Policy
-  </a>
+    <div class="legacy">
+      Formerly known as GoAheadSpendIt (GASI).
+    </div>
+  </div>
 
-  <a href="support.html">
-    Support
-  </a>
-
-  <a href="press/index.html">
-    Press Kit
-  </a>
-
-  <a href="marketing_de.html" lang="de">
-    Deutsch
-  </a>
-
+  <div class="footer-links">
+    <a href="index.html">Privacy Policy</a>
+    <a href="privacy_de.html" lang="de">Datenschutz</a>
+    <a href="mailto:support@goaheadspendit.com">Support</a>
+    <a href="mailto:privacy@goaheadspendit.com">Privacy Contact</a>
+  </div>
 </footer>
 
 </body>
